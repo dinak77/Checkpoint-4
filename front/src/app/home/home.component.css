@@ -1,0 +1,74 @@
+.home {
+    background: url(https://cdn.manomano.fr/papier-peint-support-intisse-uni-gris-clair-et-argente-P-68187-1146488_1.jpg);
+}
+
+@font-face {
+    font-family: "Circus";
+    src: url("../../assets/fonts/Circus.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Wind";
+    src: url("../../assets/fonts/wind.ttf") format("truetype");
+  }
+
+  p{
+    font-family: "Wind";
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+h1 {
+    text-align: center;
+    font-family: "Circus";
+    color: black(15, 124, 214);
+    text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
+}
+
+h2 {
+    text-decoration: underline;
+    color: goldenrod ;
+    font-family: "Wind";
+    text-shadow: 2px 0 0 black, 2px 2px 0 black, 0 2px 0 black, -2px 2px 0 black, -2px 0 0 black, -2px -2px 0 black, 0 -2px 0 black, 2px -2px 0 black;
+}
+#wildCircus {
+    margin-bottom: 3%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ShowLeft {
+    float: left;
+    margin-right: 3%;
+}
+
+.ShowRight {
+    float: right;
+    margin-left: 3%;
+}
+
+.imageRight {
+    margin-bottom: 15%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.imageLeft {
+    margin-bottom: 15%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.hr1 {
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.hrPresentation {
+    background-color: #00b2e5;
+    text-align: center;
+    color: #00b2e5;
+    background-color: transparent;
+    border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #f37921, rgba(0, 0, 0, 0));
+    border-image-slice: 100% 0% 100% 0%;
+}
