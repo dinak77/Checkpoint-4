@@ -1,23 +1,35 @@
-<form id="myForm" class=" justify-content-center">
+<form class=" justify-content-center" (ngSubmit)="contactForm.valid" #contactForm="ngForm">
   <div class="form-group col-md-6 mb-3 mt-5">
-      <label class="validation"for="validationDefault01">First name and last name</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="First name and last name" required>
+
+    <label for="contactName" class="font-weight-bold textContact">First name and last name</label>
+    <input [(ngModel)]="name" type="text" name="contactName" class="form-control form-control-md"
+      placeholder="First name and last name" #contactName="ngModel" required />
+    <div *ngIf="contactName.errors && submitted">
+      <span class="font-weight-bold text-danger" *ngIf="contactName.errors.required">* required name.</span>
+    </div>
   </div>
-    <div class="form-group col-md-6 mb-3">
-        <label class="validation"for="validationDefaultUsername">Email</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-          </div>
-          <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Email"
-            aria-describedby="inputGroupPrepend2" required>
-        </div>
-  </div>
+
   <div class="form-group col-md-6 mb-3">
-      <label class="validation" for="exampleFormControlTextarea1 " for="validationDefault03 ">Message</label>
-      <textarea class="form-control" id="validationDefault03" placeholder="Message"rows="3"></textarea>
+    <label for="contactEmail" class="font-weight-bold textContact">Email</label>
+    <input [(ngModel)]=email type="email" name="contactEmail" class="form-control form-control-md" placeholder="Email"
+      #contactEmail="ngModel" required email />
+    <div *ngIf="contactEmail.errors && submitted">
+      <span class="font-weight-bold text-danger" *ngIf="contactEmail.errors.required || contactEmail.errors.eµmail">*
+        Valid email required.</span>
+    </div>
   </div>
+
+  <div class="form-group col-md-6 mb-3">
+    <textarea class="form-control" rows="3" name="message" placeholder="Message" [(ngModel)]="comments"
+      #testimonyComments="ngModel" required></textarea>
+    <div *ngIf="testimonyComments.errors && submitted">
+      <span class="font-weight-bold text-danger" *ngIf="testimonyComments.errors.required">* Message.</span>
+    </div>
+  </div>
+
   <div class="col d-flex justify-content-center mb-3 ">
-  <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-primary" type="submit" [buttonSubmit]="buttonSend"
+      (setSendTestimony)="sendTestimony($event, contactForm.valid)">
+      Submit</button>
   </div>
 </form>
