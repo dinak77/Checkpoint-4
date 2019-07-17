@@ -1,53 +1,64 @@
-ul {
+@font-face {
+  font-family: "Circus";
+  src: url("../../assets/fonts/Circus.ttf") format("truetype");
+}
+
+@media (max-width: 575.98px)  {
+  ul {
     list-style-type: none;
+    margin-top: 150%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  ul {
+    list-style-type: none;
+    margin-top: 150%;
+  }
+}
+
+@media (min-width: 992px) {
+  ul {
+    list-style-type: none;
+    margin-top: 50%;
+  }
 }
 
 a {
-    color: white;
-   font-size: 30px;
+  color: white;
+  font-size: 40px;
+  font-family: "Circus";
+  color: goldenrod;
 }
 
 li {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
-.header {
+
+.bg-img {
+  background-image: url("https://www.flightcentre.com.au/sites/v0.flightcentre.com.au/files/styles/fcl_blog_slideshow/public/kooza-feat.jpg?itok=Vvf5LGq3");
+  min-height: 350px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Needed to position the navbar */
   position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
 }
 
-.header video {
+/* Position the navbar container inside the image */
+
+.navCircus {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  margin: 20px;
 }
 
-.header .container {
-  position: relative;
-  z-index: 2;
+.collapse a {
+  color: black;
+  text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
 }
 
-.header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
+.collapse a:hover {
+  color: red;
 }
-
