@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Circus";
+    src: url("../../assets/fonts/Circus.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Wind";
+    src: url("../../assets/fonts/wind.ttf") format("truetype");
+  }
+
+.validation {
+    text-align: center;
+    font-family: "Circus";
+    font-size: 30px;
+    color: black(15, 124, 214);
+}
+
+#validationDefault01, #validationDefaultUsername, #validationDefault03{
+    font-family: "Wind";
+    font-size: 20px;
+}
