@@ -1,15 +1,17 @@
+<div class="hr1">
 <hr class="hrPresentation">
 <h1 class="ServiceReplacement text-center">Contact</h1>
 <hr class="hrPresentation">
-
+</div>
 <div class="container">
   <div class="row">
     <div class="col-lg-8 offset-lg-2 col-md-12">
-      <form (ngSubmit)="submit()" #myForm="ngForm" class="mx-auto ">
+      <form (ngSubmit)="submit()" #myForm="ngForm" class="form mx-auto ">
         <div class="form-group">
           <label for="lastName">Last name<span class="requis">*</span> :</label>
           <input required minlength="2" maxlength="15" [(ngModel)]="lastName" #Lastname="ngModel" id="lastName"
             name="lastName" type="text" class="form-control">
+            <div class="invalid-feedback">Example invalid custom select feedback</div>
         </div>
 
         <div *ngIf="myForm.submitted">

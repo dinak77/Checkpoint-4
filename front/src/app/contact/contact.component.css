@@ -8,6 +8,14 @@
     src: url("../../assets/fonts/wind.ttf") format("truetype");
   }
 
+  .form-control  {
+      border:  2px solid black;
+  }
+
+  #comment  {
+    border:  2px solid black;
+}
+
 .validation {
     font-family: "Circus";
     font-size: 30px;
@@ -26,6 +34,11 @@
 
 .btn {
     margin-top:  5%;
+}
+
+.hr1 {
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
 h1 {
