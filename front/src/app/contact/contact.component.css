@@ -19,11 +19,20 @@
     font-size: 20px;
 }
 
+.container{
+    font-family:  "Wind";
+    font-size: 1.5rem;
+}
+
+.btn {
+    margin-top:  5%;
+}
+
 h1 {
     text-align: center;
     font-family: "Circus";
-    color: black(15, 124, 214);
-    text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
+    color: blue;
+    text-shadow: 2px 0 0 white, 2px 2px 0 white, 0 2px 0 white, -2px 2px 0 white, -2px 0 0 white, -2px -2px 0 white, 0 -2px 0 white, 2px -2px 0 white;
 }
 
 .hrPresentation {
@@ -32,5 +41,14 @@ h1 {
     color: #00b2e5;
     background-color: transparent;
     border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #f37921, rgba(0, 0, 0, 0));
+    border-image-slice: 100% 0% 100% 0%;
+}
+
+.hrPresentation {
+    background-color: black;
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    border-image: linear-gradient(to left, rgba(0, 0, 0, 0), blue, rgba(0, 0, 0, 0));
     border-image-slice: 100% 0% 100% 0%;
 }
