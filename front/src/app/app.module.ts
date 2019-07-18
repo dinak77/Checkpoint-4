@@ -9,6 +9,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PriceComponent } from './price/price.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     GalleryComponent,
     ContactComponent,
+    PriceComponent,
   ],
   imports: [
     BrowserModule,
