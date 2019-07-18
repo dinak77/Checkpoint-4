@@ -1,35 +1,77 @@
-<form class=" justify-content-center" (ngSubmit)="contactForm.valid" #contactForm="ngForm">
-  <div class="form-group col-md-6 mb-3 mt-5">
-
-    <label for="contactName" class="font-weight-bold textContact">First name and last name</label>
-    <input [(ngModel)]="name" type="text" name="contactName" class="form-control form-control-md"
-      placeholder="First name and last name" #contactName="ngModel" required />
-    <div *ngIf="contactName.errors && submitted">
-      <span class="font-weight-bold text-danger" *ngIf="contactName.errors.required">* required name.</span>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-12">
+        <form (ngSubmit)="submit()" #myForm="ngForm" class="mx-auto ">
+          <div class="form-group">
+            <label for="lastName">Last name<span class="requis">*</span> :</label>
+            <input required minlength="2" maxlength="15" [(ngModel)]="lastName" #Lastname="ngModel" id="lastName"
+              name="lastName" type="text" class="form-control">
+          </div>
+  
+          <div *ngIf="myForm.submitted">
+            <div class="alert alert-danger" *ngIf="lastName.errors">
+              <div *ngIf="lastName.errors.required">Required fields.</div>
+              <div *ngIf="lastName.errors.minlength">Required fields 2 characters.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="firstName">First name<span class="requis">*</span> :</label>
+            <input required minlength="2" maxlength="15" [(ngModel)]="firstName" #Firstname="ngModel" id="firstName"
+              name="firstName" type="text" class="form-control">
+          </div>
+  
+          <div *ngIf="myForm.submitted">
+            <div class="alert alert-danger" *ngIf="firstName.errors">
+              <div *ngIf="firstName.errors.required">Required fields.</div>
+              <div *ngIf="firstName.errors.minlength">Required fields 2 characters.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone number<span class="requis">*</span> :</label>
+            <input required minlength="10" maxlength="10" [(ngModel)]="phoneNumber" #PhoneNumber="ngModel"
+              name="Numéro de téléphone" id="phoneNumber" type="text" class="form-control">
+          </div>
+          <div *ngIf="myForm.submitted">
+            <div class="alert alert-danger" *ngIf=" PhoneNumber.errors">
+              <div *ngIf="PhoneNumber.errors.required">Phone number required.</div>
+              <div *ngIf="PhoneNumber.errors.minlength">Invalid phone number.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email<span class="requis">*</span> :</label>
+            <input required minlength="9" maxlength="50" [(ngModel)]="email" #Email="ngModel" n="ngModel"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" type="text"  name="mail"
+              class="form-control">
+          </div>
+          <div *ngIf="myForm.submitted">
+            <div class="alert alert-danger" *ngIf="email.errors">
+              <div *ngIf="email.errors.required">Email required.</div>
+              <div *ngIf="email.errors.pattern ">Invalid email.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comments :</label>
+            <textarea [(ngModel)]="comment" #Comment="ngModel" id="comment" type="text" placeholder="votre commentaire"
+              name="comment" class="form-control" class="col-12" cols="50" rows="5"></textarea>
+          </div>
+          <div class="form-group">
+            <div>
+              <input type="checkbox" id="checkbox" name="checkbox" [(ngModel)]="check" #Checkbox="ngModel" required>
+              <label for="checkbox">By checking this box, I certify that I have read the legal notices.</label>
+            </div>
+            <div *ngIf="myForm.submitted">
+              <div class="alert alert-danger" *ngIf="Checkbox.errors">
+                <div *ngIf="Checkbox.errors.required">Required box.</div>
+              </div>
+            </div>
+            <div class="requiredEmpty">
+              <span>(*)</span> <span class="required font-italic"> Required fields.</span>
+              <br>
+              <button class="btn btn-warning " type="submit">SUBMIT </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
-  <div class="form-group col-md-6 mb-3">
-    <label for="contactEmail" class="font-weight-bold textContact">Email</label>
-    <input [(ngModel)]=email type="email" name="contactEmail" class="form-control form-control-md" placeholder="Email"
-      #contactEmail="ngModel" required email />
-    <div *ngIf="contactEmail.errors && submitted">
-      <span class="font-weight-bold text-danger" *ngIf="contactEmail.errors.required || contactEmail.errors.eµmail">*
-        Valid email required.</span>
-    </div>
-  </div>
-
-  <div class="form-group col-md-6 mb-3">
-    <textarea class="form-control" rows="3" name="message" placeholder="Message" [(ngModel)]="comments"
-      #testimonyComments="ngModel" required></textarea>
-    <div *ngIf="testimonyComments.errors && submitted">
-      <span class="font-weight-bold text-danger" *ngIf="testimonyComments.errors.required">* Message.</span>
-    </div>
-  </div>
-
-  <div class="col d-flex justify-content-center mb-3 ">
-    <button class="btn btn-primary" type="submit" [buttonSubmit]="buttonSend"
-      (setSendTestimony)="sendTestimony($event, contactForm.valid)">
-      Submit</button>
-  </div>
-</form>
