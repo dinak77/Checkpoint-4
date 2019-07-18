@@ -1,20 +1,22 @@
 @font-face {
-    font-family: "Circus";
-    src: url("../../assets/fonts/Circus.ttf") format("truetype");
-}
-
-@font-face {
     font-family: "Wind";
     src: url("../../assets/fonts/wind.ttf") format("truetype");
   }
-
-.validation {
-    font-family: "Circus";
-    font-size: 30px;
-    color: black(15, 124, 214);
-}
-
-#validationDefault01, #validationDefaultUsername, #validationDefault03{
+  
+button{
+    color: black;
+   display: block;
+   margin: auto;
+ }
+ h2{
+    text-align: center;
+ }
+ *{
+    color: black;
     font-family: "Wind";
-    font-size: 20px;
-}
+    font-size: 1.5rem;
+ }
+
+ p{
+    text-align: center;
+ }

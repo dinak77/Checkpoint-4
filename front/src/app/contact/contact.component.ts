@@ -1,58 +1,69 @@
 import { Component, OnInit } from '@angular/core';
-import { SendEmailService } from 'src/app/send-email-service';
-import { Testimony } from 'src/app/testimony';
 
+import { HttpClient } from '@angular/common/http';
+import { Member } from '../member';
+import { SendmailService } from '../sendmail.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent implements OnInit {
 
-  public buttonSend: string = "Submit";
+  public ourmember: Member;
+  private littleclient: HttpClient;
 
-  public name: string = null;
+  // here i initialise the variable as the member class
+
+  public lastName: string = null;
+  public firstName: string = null;
+  public phoneNumber: string = null;
   public email: string = null;
-  public comments: string = null;
-  public submitted: boolean = false;
+  public comment: string = null;
 
-  @Output() public getDisplay: EventEmitter<any> = new EventEmitter()
+  constructor(private emailService: SendmailService) {
+    this.ourmember = new Member();
+  }
 
-  constructor(private emailService: SendEmailService) { }
+  submit() {
+    this.ourmember.lastName = this.lastName;
+    this.ourmember.firstName = this.firstName;
+    this.ourmember.phoneNumber = this.phoneNumber;
+    this.ourmember.email = this.email;
+    this.ourmember.comment = this.comment;
 
+    this.emailService.sendmail(this.ourmember).subscribe(
+      () => {
+        alert("mail envoyé");
+      }
+     
+    );
+    console.log(this.ourmember)
+  }
+
+  // public submit(): void {
+  //   this.littleclient.post(
+  //     "",
+  //     this.ourmember,
+  //     {
+  //       headers: {
+  //         "content-type": "application/x-www-form-urlencoded"
+  //       }
+  //     }
+  //   ).subscribe(
+  //     (response: any) => {
+  //       console.log(response);
+  //     },
+  //     (error: any) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
   ngOnInit() {
-    this.displayComponent = false;
   }
 
-  onGetDisplay(event:boolean):void {
-    this.displayComponent = !event;
-    this.getDisplay.emit(this.displayComponent);
+  onSubmit() {
+
   }
-
-  sendTestimony(event: boolean, testimonyFormIsValid: boolean): void {
-
-    if (event && testimonyFormIsValid) {
-      let testimony = new Testimony(
-        this.name, this.email, this.comments,
-      );
-      this.emailService.sendTestimonyEmail(
-        testimony
-        ).subscribe(
-          (response) => {
-            if (response) {
-              alert("Your message has been sent by email for validation");
-            } else {
-              alert("An error has occurred, your message has not been sent");
-            }
-          },
-          error => {
-            alert("An error has occurred, your message has not been sent");
-          }
-        );
-
-    } else if (event && (!testimonyFormIsValid)) {
-      this.submitted = true;
-    }
-  }
-
 }
