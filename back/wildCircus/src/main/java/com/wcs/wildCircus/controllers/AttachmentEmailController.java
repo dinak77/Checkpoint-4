@@ -6,24 +6,26 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import com.wcs.wildCircus.config.ConstantConfig;
+import com.wcs.wildCircus.entities.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
-@Controller
+@RestController
+@CrossOrigin("*")
 public class AttachmentEmailController {
+
+    public AttachmentEmailController() {}
 
     @Autowired
     public JavaMailSender emailSender;
 
-    @ResponseBody
-    @RequestMapping("/sendAttachmentEmail")
-    public String sendAttachmentEmail() throws MessagingException {
+    @PostMapping("/sendAttachmentEmail")
+    public String sendAttachmentEmail(@RequestBody Member member) throws MessagingException {
 
         MimeMessage message = emailSender.createMimeMessage();
 
@@ -32,20 +34,16 @@ public class AttachmentEmailController {
         MimeMessageHelper helper = new MimeMessageHelper(message, multipart);
 
         helper.setTo(ConstantConfig.FRIEND_EMAIL);
-        helper.setSubject("Test email with attachments");
+        helper.setSubject("Test email with attachments from " + member.getFirstName());
 
-        helper.setText("Hello, Im testing email with attachments!");
+        helper.setText("Hello, Im testing email!" + "\n" +
+                "Fisrtname: " + member.getFirstName() + "\n" +
+                "Lastname: " + member.getLastName() + "\n" +
+                "phoneNumber: " + member.getPhoneNumber() + "\n" +
+                "email: " + member.getEmail() + "\n" +
+                "comment:" + member.getComment() +"."
+        );
 
-        String path1 = "/home/tran/Downloads/test.txt";
-        String path2 = "/home/tran/Downloads/readme.zip";
-
-        // Attachment 1
-        FileSystemResource file1 = new FileSystemResource(new File(path1));
-        helper.addAttachment("Txt file", file1);
-
-        // Attachment 2
-        FileSystemResource file2 = new FileSystemResource(new File(path2));
-        helper.addAttachment("Readme", file2);
 
         emailSender.send(message);
 

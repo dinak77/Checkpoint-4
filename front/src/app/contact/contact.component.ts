@@ -34,12 +34,15 @@ export class ContactComponent implements OnInit {
     this.ourmember.comment = this.comment;
 
     this.emailService.sendmail(this.ourmember).subscribe(
-      () => {
-        alert("mail envoyé");
+      (event) => {
+        console.log("event: " + event);
+        if (event == "Email Sent!") {
+          alert("mail envoyé");
+        } else {
+          alert("Error !!");
+        }
       }
-     
     );
-    console.log(this.ourmember)
   }
 
   // public submit(): void {

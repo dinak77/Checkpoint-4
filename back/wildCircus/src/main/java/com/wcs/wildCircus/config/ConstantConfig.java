@@ -7,7 +7,7 @@ public class ConstantConfig {
     public static final String MY_EMAIL = "robertmickael26@gmail.com";
 
     // Replace password!!
-    public static final String MY_PASSWORD = "Mickeymousse77";
+    public static final String MY_PASSWORD = "Dragons77240";
 
     // And receiver!
     public static final String FRIEND_EMAIL = "robertmickael26@gmail.com";
