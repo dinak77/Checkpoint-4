@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PriceComponent } from './price/price.component';
+import { ButtonNavbarComponent } from './button-navbar/button-navbar.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PriceComponent } from './price/price.component';
     GalleryComponent,
     ContactComponent,
     PriceComponent,
+    ButtonNavbarComponent,
   ],
   imports: [
     BrowserModule,
