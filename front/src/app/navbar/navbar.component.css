@@ -1,79 +1,8 @@
-@font-face {
-  font-family: "Circus";
-  src: url("../../assets/fonts/Circus.ttf") format("truetype");
-}
-
-.bg-img {
+.custom-toggler  {
   background-image: url("https://www.flightcentre.com.au/sites/v0.flightcentre.com.au/files/styles/fcl_blog_slideshow/public/kooza-feat.jpg?itok=Vvf5LGq3");
-  min-height: 350px;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* Needed to position the navbar */
-  position: relative;
+  min-height: 300px;
 }
 
-/* Position the navbar container inside the image */
-
-.topnav {
-  overflow: hidden;
-  position: relative;
-  left: 40%;
-  font-family: "Circus";
-}
-
-/* Navbar links */
-@media (min-width: 1200px) {
-.topnav a {
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: black;
-  text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
-  font-size: 50px;
-}
-
-
-.topnav a:hover {
-  color: white;
-  text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
-}
-}
-
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .topnav a{
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: black;
-  text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
-  font-size: 35px !important;
-  }
-  .topnav a:hover {
-    color: white;
-    text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
-  }
-}
-
-/* Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
-  .topnav a{
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: black;
-    text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
-    font-size: 30px !important;
-    margin-right: 25%;
-
-    }
-    .topnav a:hover {
-      color: white;
-      text-shadow: 2px 0 0 #d60, 2px 2px 0 #d60, 0 2px 0 #d60, -2px 2px 0 #d60, -2px 0 0 #d60, -2px -2px 0 #d60, 0 -2px 0 #d60, 2px -2px 0 #d60;
-    }
+.navbar-toggler {
+  background-color: white  !important;
 }
