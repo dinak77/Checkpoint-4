@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Circus";
+    src: url("../../assets/fonts/Circus.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Wind";
+    src: url("../../assets/fonts/wind.ttf") format("truetype");
+  }
+
+  .form-control  {
+      border:  2px solid black;
+  }
+
+  #comment  {
+    border:  2px solid black;
+}
+
+.validation {
+    font-family: "Circus";
+    font-size: 30px;
+    color: black(15, 124, 214);
+}
+
+#validationDefault01, #validationDefaultUsername, #validationDefault03{
+    font-family: "Wind";
+    font-size: 20px;
+}
+
+.container{
+    font-family:  "Wind";
+    font-size: 1.5rem;
+}
+
+.btn {
+    margin-top:  5%;
+}
+
+.hr1 {
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Circus";
+    color: blue;
+    text-shadow: 2px 0 0 white, 2px 2px 0 white, 0 2px 0 white, -2px 2px 0 white, -2px 0 0 white, -2px -2px 0 white, 0 -2px 0 white, 2px -2px 0 white;
+}
+
+.hrPresentation {
+    background-color: #00b2e5;
+    text-align: center;
+    color: #00b2e5;
+    background-color: transparent;
+    border-image: linear-gradient(to left, rgba(0, 0, 0, 0), #f37921, rgba(0, 0, 0, 0));
+    border-image-slice: 100% 0% 100% 0%;
+}
+
+.hrPresentation {
+    background-color: black;
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    border-image: linear-gradient(to left, rgba(0, 0, 0, 0), blue, rgba(0, 0, 0, 0));
+    border-image-slice: 100% 0% 100% 0%;
+}

@@ -1,0 +1,38 @@
+.footer {
+    color: white;
+    background-color: black;
+    width: auto;
+    height: auto;
+    font-size: 13px;
+    text-decoration: underline;
+  }
+  
+  .companyTitle {
+    text-decoration: underline;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  img {
+    height: 75px;
+  }
+  
+  .row {
+    margin-right: auto;
+  }
+  
+  li {
+    list-style: none;
+  }
+   
+  .nameStaff {
+    text-decoration: underline;
+  }
+  
+  .logo {
+    margin: 3%;
+  }

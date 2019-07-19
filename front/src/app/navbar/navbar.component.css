@@ -1,0 +1,8 @@
+.custom-toggler  {
+  background-image: url("https://www.flightcentre.com.au/sites/v0.flightcentre.com.au/files/styles/fcl_blog_slideshow/public/kooza-feat.jpg?itok=Vvf5LGq3");
+  min-height: 300px;
+}
+
+.navbar-toggler {
+  background-color: white  !important;
+}

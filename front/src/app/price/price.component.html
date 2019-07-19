@@ -1,0 +1,102 @@
+<div class="hr1">
+  <hr class="hrPresentation">
+  <h1 class="ServiceReplacement">Price</h1>
+  <hr class="hrPresentation">
+</div>
+
+<div class="container">
+  <table>
+    <tr>
+      <th></th>
+      <th>Out weekend 
+          <div class="Weekend">(From Monday to Friday)</div>
+      </th>
+      <th>Weekend
+          <div class="Weekend">(Saturday and Sunday)</div>
+      </th>
+
+    </tr>
+    <tr>
+      <td class="people">Adults</td>
+      <td>17.69 £</td>
+      <td>20.35 £</td>
+
+
+    </tr>
+    <tr>
+      <td class="people">Children under 12 years</td>
+      <td>13.27 £</td>
+      <td>15.92 £</td>
+  
+    </tr>
+    <tr>
+      <td class="people">Group (more than 10 people)</td>
+      <td>5.31 £</td>
+      <td>5.75 £</td>
+    </tr>
+
+    <tr>
+      <td class="people">School</td>
+      <td>4.87 £</td>
+      <td>5.31 £</td>
+    </tr>
+  </table>
+</div>
+
+  <div class="container">
+    <div id="ticket">
+          <form id="myForm" class="row ">
+
+            <div class="form-group col-md-3 mt-3">
+                <label for="inputState">Adults/ Children/ Group/ ...</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Adults</option>
+                  <option>Children under 12 years</option>
+                  <option>Group (more than 10 people)	</option>
+                  <option>School</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3 mt-3">  
+                <label for="inputState">Weekend or not weekend</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Out weekend</option>
+                  <option>Weekend</option>
+                </select>
+              </div>
+
+            <div class="form-group col-md-3 mt-3">
+                <label for="inputState">Number</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                </select>
+            </div>
+
+                <div class="form-group col-md-3 mt-3">
+                <button class="btn btn-warning " type="submit">Buy </button>
+                </div>
+              </form>
+  </div>
+
+
+
+  <button [type]="buttonType" class="text-dark postMessage col-md-5" (click)='addPeriod()'
+  id="AddPeriod">
+  {{buttonName1}}
+</button>
+
+<button [type]="buttonType" class="text-dark postMessage  col-md-5" (click)='deletePeriod()'
+id="DeletePeriod">
+{{buttonName2}}
+</button>
+
+</div>
