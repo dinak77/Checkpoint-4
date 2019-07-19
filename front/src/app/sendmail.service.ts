@@ -12,8 +12,9 @@ export class SendmailService {
 
   constructor(private http: HttpClient) { }
 
-  sendmail (member:Member): Observable<Member> {
-    let sendmailUrl =" http://localhost:8080" + '/sendSimpleEmail'
-    return this.http.post<Member>(sendmailUrl,member);
+  sendmail (member:Member): Observable<any> {
+    let sendmailUrl =" http://localhost:8080" + '/sendSimpleEmail';
+    let request = this.http.post(sendmailUrl, member)
+    return request;
   };
 }
